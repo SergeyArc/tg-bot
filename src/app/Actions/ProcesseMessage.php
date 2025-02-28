@@ -12,6 +12,7 @@ class ProcesseMessage
         $message = Message::create([
             'update_id' => $data->updateId,
             'chat_id' => $data->chatId,
+            'message_id' => $data->messageId,
             'text' => $data->text,
             'date' => $data->date,
             'user' => $data->user,

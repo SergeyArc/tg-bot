@@ -18,6 +18,9 @@ class TelegramMessageData extends Data
     #[MapInputName("message.chat.id")]
     public int $chatId;
 
+    #[MapInputName("message.message_id")]
+    public int $messageId;
+
     #[MapInputName("message.from.first_name")]
     public string $user;
 
@@ -36,6 +39,15 @@ class TelegramMessageData extends Data
                 'integer',
                 function ($attribute, $value, $fail) {
                     if (Message::where('update_id', $value)->exists()) {
+                        $fail('Сообщение уже обработано');
+                    }
+                }
+            ],
+            'message.message_id' => [
+                'required',
+                'integer',
+                function ($attribute, $value, $fail) {
+                    if (Message::where('message_id', $value)->exists()) {
                         $fail('Сообщение уже обработано');
                     }
                 }

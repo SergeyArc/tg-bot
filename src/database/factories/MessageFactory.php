@@ -21,6 +21,7 @@ class MessageFactory extends Factory
     {
         return [
             'chat_id' => $this->faker->randomNumber(),
+            'message_id' => $this->faker->unique()->randomNumber(),
             'update_id' => $this->faker->unique()->randomNumber(),
             'user' => $this->faker->userName(),
             'text' => $this->faker->sentence(),
