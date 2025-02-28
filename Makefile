@@ -32,7 +32,7 @@ migrate:
 	docker-compose run --rm php-cli php artisan migrate
 migrate-refresh:
 	docker-compose run --rm php-cli php artisan db:wipe
-	docker-compose run --rm php-cli php artisan migrate:refresh --seed --seeder=FakeDataDatabaseSeeder
+	docker-compose run --rm php-cli php artisan migrate:refresh --seed
 test:
 	make create-test-db
 	docker-compose run --rm php-cli php artisan test
