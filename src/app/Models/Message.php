@@ -16,4 +16,8 @@ class Message extends Model
         'text',
         'sent_at'
     ];
+
+    protected $casts = [
+        'sent_at' => 'datetime',
+    ];
 }
