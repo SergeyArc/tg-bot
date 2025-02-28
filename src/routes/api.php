@@ -11,5 +11,5 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/messages', ListMessagesController::class)->name('message.index');
-    Route::post('/send', SendMessageController::class);   
+    Route::post('/send', SendMessageController::class)->name('message.send');
 });

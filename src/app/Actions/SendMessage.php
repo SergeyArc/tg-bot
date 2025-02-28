@@ -12,11 +12,17 @@ class SendMessage
         string $telegramBotUrl,
         HttpClient $client
     ): void {
+        $payload = [
+            'chat_id' => $data->chatId,
+            'text' => $data->text,
+        ];
+
+        if ($data->replyToMessageId !== null) {
+            $payload['reply_to_message_id'] = $data->replyToMessageId;
+        }
+
         $client->post("{$telegramBotUrl}/sendMessage", [
-            'json' => [
-                'chat_id' => $data->chatId,
-                'text' => $data->text,
-            ]
+            'json' => $payload
         ]);
     }
 }

@@ -12,5 +12,6 @@ class SendMessageData extends Data
     public function __construct(
         public int $chatId,
         public string $text,
+        public ?int $replyToMessageId = null,
     ) {}
 }
