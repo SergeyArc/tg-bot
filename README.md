@@ -41,3 +41,7 @@ make restart
 
 ### 5. Access the application
 You can access the application at http://localhost:8100/api
+
+Default credentials:
+admin@localhost.local
+password
