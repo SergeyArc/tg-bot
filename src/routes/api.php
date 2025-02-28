@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SendMessageController;
 use App\Http\Controllers\ListMessagesController;
 
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
@@ -10,4 +11,5 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/messages', ListMessagesController::class)->name('message.index');
+    Route::post('/send', SendMessageController::class);   
 });

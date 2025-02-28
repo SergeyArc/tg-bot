@@ -122,4 +122,7 @@ return [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
+
+    'tg_token' => env('TELEGRAM_TOKEN', ''),
+    'tg_api_url' => env('TELEGRAM_API_URL', 'https://api.telegram.org'),
 ];

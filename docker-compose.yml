@@ -23,6 +23,7 @@ services:
       - ./src:/app
     environment:
       PHP_IDE_CONFIG: "serverName=radstand-server"
+      TELEGRAM_TOKEN: ${TELEGRAM_TOKEN}
 
   php-cli:
     build:
