@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('update_id')->unique();
             $table->string('user');
             $table->text('text');
-            $table->timestamp('sent_at')->useCurrent();
+            $table->timestamp('date')->useCurrent();
             $table->timestamps();
         });
     }

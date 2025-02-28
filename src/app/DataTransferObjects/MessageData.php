@@ -16,7 +16,7 @@ class MessageData extends Data
         public int $id,
         public int $chatId,
         #[WithCastAndTransformer(CarbonCastAndTransformer::class)]
-        public Carbon $sentAt,
+        public Carbon $date,
         public string $user,
         public string $text,
     ) {}

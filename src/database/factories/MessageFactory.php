@@ -24,7 +24,7 @@ class MessageFactory extends Factory
             'update_id' => $this->faker->unique()->randomNumber(),
             'user' => $this->faker->userName(),
             'text' => $this->faker->sentence(),
-            'sent_at' => now(),
+            'date' => now(),
         ];
     }
 }

@@ -14,10 +14,10 @@ class Message extends Model
         'update_id',
         'user',
         'text',
-        'sent_at'
+        'date'
     ];
 
     protected $casts = [
-        'sent_at' => 'datetime',
+        'date' => 'datetime',
     ];
 }
