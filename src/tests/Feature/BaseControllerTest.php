@@ -2,13 +2,12 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
-use App\Models\User;
 use App\Models\Message;
-use Database\Seeders\RoleSeeder;
+use App\Models\User;
 use Database\Seeders\AdminSeeder;
+use Database\Seeders\RoleSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-
+use Tests\TestCase;
 
 class BaseControllerTest extends TestCase
 {
@@ -16,7 +15,7 @@ class BaseControllerTest extends TestCase
 
     protected User $user;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 

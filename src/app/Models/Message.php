@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class Message extends Model
 {
@@ -15,7 +15,7 @@ class Message extends Model
         'update_id',
         'user',
         'text',
-        'date'
+        'date',
     ];
 
     protected $casts = [

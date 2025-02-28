@@ -2,8 +2,8 @@
 
 namespace App\Actions;
 
-use App\Infrastructure\HttpClient;
 use App\DataTransferObjects\SendMessageData;
+use App\Infrastructure\HttpClient;
 
 class SendMessage
 {
@@ -22,7 +22,7 @@ class SendMessage
         }
 
         $client->post("{$telegramBotUrl}/sendMessage", [
-            'json' => $payload
+            'json' => $payload,
         ]);
     }
 }

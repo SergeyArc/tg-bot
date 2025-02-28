@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\ViewModels\GetMessages;
+use Illuminate\Http\Request;
 
 class ListMessagesController extends Controller
 {

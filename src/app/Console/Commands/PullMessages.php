@@ -2,11 +2,11 @@
 
 namespace App\Console\Commands;
 
+use App\Actions\ProcesseMessage;
+use App\DataTransferObjects\TelegramMessageData;
+use App\Infrastructure\HttpClient;
 use App\Models\Message;
 use Illuminate\Console\Command;
-use App\Actions\ProcesseMessage;
-use App\Infrastructure\HttpClient;
-use App\DataTransferObjects\TelegramMessageData;
 
 class PullMessages extends Command
 {
@@ -41,7 +41,7 @@ class PullMessages extends Command
         $lastUpdateId = Message::max('update_id') ?? 0;
 
         $response = $this->client->post($url, [
-            'json' => ['offset' => $lastUpdateId + 1]
+            'json' => ['offset' => $lastUpdateId + 1],
         ]);
 
         $data = json_decode($response->getBody()->getContents(), true);

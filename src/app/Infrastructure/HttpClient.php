@@ -2,8 +2,8 @@
 
 namespace App\Infrastructure;
 
-use GuzzleHttp\Client;
 use App\Actions\Contracts\HttpClientInterface;
+use GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;
 
 class HttpClient implements HttpClientInterface

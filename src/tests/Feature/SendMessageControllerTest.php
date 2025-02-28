@@ -2,14 +2,11 @@
 
 namespace Tests\Feature;
 
-
-use Mockery;
+use App\Actions\Contracts\HttpClientInterface;
+use App\Infrastructure\HttpClient;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
-use App\Infrastructure\HttpClient;
-use Tests\Feature\BaseControllerTest;
-use Psr\Http\Message\ResponseInterface;
-use App\Actions\Contracts\HttpClientInterface;
+use Mockery;
 
 class SendMessageControllerTest extends BaseControllerTest
 {

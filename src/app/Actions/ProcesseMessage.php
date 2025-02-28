@@ -2,8 +2,8 @@
 
 namespace App\Actions;
 
-use App\Models\Message;
 use App\DataTransferObjects\TelegramMessageData;
+use App\Models\Message;
 
 class ProcesseMessage
 {
