@@ -14,7 +14,8 @@ class GetMessages
 
     public function messages(): LengthAwarePaginator
     {
-        $query = Message::orderBy('created_at')->paginate(self::PER_PAGE, ['*'], 'page', $this->currentPage);
+        $query = Message::orderBy('created_at', 'desc')
+            ->paginate(self::PER_PAGE, ['*'], 'page', $this->currentPage);
 
         return new LengthAwarePaginator(
             $query->map(fn(Message $message) => MessageData::from($message)),
