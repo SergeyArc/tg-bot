@@ -14,6 +14,7 @@ class FakeDataDatabaseSeeder extends Seeder
         $this->call([
             RoleSeeder::class,
             AdminSeeder::class,
+            MessageSeeder::class,
         ]);
     }
 }
