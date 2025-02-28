@@ -11,6 +11,7 @@ services:
       - ./docker/nginx/conf.d:/etc/nginx/conf.d
 
   php-fpm:
+    container_name: ${APP_NAME}_php-fpm
     build:
       context: ./docker
       dockerfile: php-fpm/Dockerfile
@@ -26,6 +27,7 @@ services:
       TELEGRAM_TOKEN: ${TELEGRAM_TOKEN}
 
   php-cli:
+    container_name: ${APP_NAME}_php-cli
     build:
       context: ./docker
       dockerfile: php-cli/Dockerfile
@@ -51,6 +53,21 @@ services:
       POSTGRES_USER: ${POSTGRES_USER:-test_db_user}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-test_db_password}
       PGDATA: /var/lib/postgresql/data/pgdata
+
+  ofelia:
+      build:
+        context: ./docker
+        dockerfile: ofelia/Dockerfile
+      restart: unless-stopped
+      depends_on:
+        - php-fpm
+        - postgres
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - ./docker/ofelia/ofelia.ini:/tmp/config.ini
+        - ./docker/logs/ofelia:/tmp/logs
+      env_file:
+        - .env
 
 volumes:
   composer:
